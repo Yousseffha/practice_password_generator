@@ -1,0 +1,82 @@
+/* start vairables */
+:root {
+  --MainColor: #58a957;
+  --MainTransition: 0.3s;
+}
+/* end vairables */
+/* start global rules */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: var(--MainColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  width: 30vw;
+  height: 20vh;
+  background-color: #fad67d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+/* end global rules */
+/* start password */
+.password {
+  background-color: rgba(102, 74, 3, 0.453);
+  width: 80%;
+  height: 5vh;
+  border-bottom: 3px solid white;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  letter-spacing: 1px;
+}
+/* end password */
+/*start button*/
+.container button {
+  border: none;
+  background-color: var(--MainColor);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 0;
+}
+.container button::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  inset: 0;
+  z-index: -1;
+  background-color: #76ab75e5;
+  transition: var(--MainTransition);
+}
+.container button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #76ab75e5;
+  transition: var(--MainTransition);
+}
+.container button:hover::before,
+.container button:hover::after {
+  width: 50%;
+}
+/*end button*/
